@@ -5,6 +5,11 @@ let navbar = document.querySelector('.navbar');
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
 
+
+let sendEmail =()=>{
+    Emal
+}
+
 let man = ()=>{
     // menuIcon.classList.toggle('bx-x');
     // navbar.classList.toggle('active');
