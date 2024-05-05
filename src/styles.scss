@@ -488,11 +488,8 @@ a {
         padding: 2rem;
 
         h4 {
-          line-height: 1;
-
           font: {
-            size: 2rem;
-            weight: 600;
+            size: 1.8rem;
           }
         }
 
@@ -593,8 +590,108 @@ a {
 }
 
 .projects {
-  margin: 15rem auto;
   text-align: center;
+  .card__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 3.5rem;
+    .card__article {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      &:hover {
+        animation: remove-overflow 2s forwards;
+        .card__data {
+          animation: show-data 1s forwards;
+          opacity: 1;
+          transition: opacity 0.3s;
+        }
+      }
+      &:not(:hover) {
+        animation: show-overflow 2s forwards;
+        .card__data {
+          animation: remove-data 1s forwards;
+        }
+      }
+
+      .card__img {
+        width: 328px;
+        height: 270px;
+        border-radius: 1.5rem;
+      }
+      .card__data {
+        width: 280px;
+        background-color: #13a5cdcb;
+        padding: 1.5rem 2rem;
+        box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.15);
+        border-radius: 1rem;
+        position: absolute;
+        bottom: -9rem;
+        left: 0;
+        right: 0;
+        margin-inline: auto;
+        opacity: 0;
+        transition: opacity 1s 1s;
+        .card__description {
+          display: block;
+          font-size: 1.2rem;
+          margin-bottom: 0.25rem;
+          color: black;
+        }
+        .card__title {
+          font-size: 1rem;
+          font-weight: 500;
+          color: var(--title-color);
+          margin-bottom: 0.75rem;
+        }
+        .card__button {
+          text-decoration: none;
+          font-size: 0.8rem;
+          font-weight: 500;
+          color: var(--first-color);
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  @keyframes show-data {
+    50% {
+      transform: translateY(-10rem);
+    }
+    100% {
+      transform: translateY(-7rem);
+    }
+  }
+
+  @keyframes remove-overflow {
+    to {
+      overflow: initial;
+    }
+  }
+
+  @keyframes remove-data {
+    0% {
+      transform: translateY(-7rem);
+    }
+    50% {
+      transform: translateY(-10rem);
+    }
+    100% {
+      transform: translateY(0.5rem);
+    }
+  }
+
+  @keyframes show-overflow {
+    0% {
+      overflow: initial;
+      pointer-events: none;
+    }
+    50% {
+      overflow: hidden;
+    }
+  }
 }
 
 .contact {
@@ -662,6 +759,12 @@ a {
 }
 
 @media (max-width: 1177px) {
+  .projects {
+    .card__container {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 0.5rem;
+    }
+  }
   .header {
     .navbar {
       a {
@@ -691,7 +794,7 @@ a {
   }
 
   section {
-    padding: 8rem 9% 2rem;
+    padding: 5rem 9% 2rem;
   }
 
   .heading {
@@ -705,7 +808,7 @@ a {
   }
 }
 
-@media (max-width: 1001px) {
+@media (max-width: 1022px) {
   .heading {
     font-size: 2rem;
     font-weight: 400;
@@ -739,7 +842,8 @@ a {
   }
 
   section {
-    padding: 10rem 3% 2rem;
+    padding: 5rem 3% 2rem;
+    margin: 2rem;
   }
 
   .education {
@@ -787,7 +891,13 @@ a {
   }
 }
 
-@media (max-width: 894px) {
+@media (max-width: 945px) {
+  .projects {
+    .card__container {
+      grid-template-columns: repeat(1, 1fr);
+      column-gap: 0.5rem;
+    }
+  }
   #menu-icon {
     display: block;
   }
@@ -826,17 +936,16 @@ a {
 
   .home {
     flex-direction: column-reverse;
-    gap: 2rem;
-    margin: 3rem 2rem;
+    gap: 1rem;
+    margin: 1rem 2rem;
 
     .home-content {
+      h3 {
+        font-size: 1.5rem;
+      }
       h1 {
         font-size: 2.3rem;
         margin-top: 1rem;
-      }
-
-      h3 {
-        font-size: 1.5rem;
       }
 
       p {
@@ -854,8 +963,64 @@ a {
   }
 }
 
-// @media (max-width:425px) {
-//     .home-content {
-//         h1 {}
-//     }
-// }
+@media (max-width: 449px) {
+  .header {
+    padding: 1rem 3%;
+    .logo {
+      width: 100%;
+      font-size: 1.8rem;
+    }
+  }
+  .home {
+    gap: 0.1rem;
+
+    .home-content {
+      .text-animation {
+        font-size: 1.5rem;
+      }
+      h1 {
+        font-size: 2rem;
+        margin-top: 0rem;
+      }
+
+      p {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+    }
+  }
+  .btnn {
+    font: {
+      size: 0.8rem;
+      weight: 600;
+    }
+  }
+  .social-icons {
+    a {
+      width: 2rem;
+      height: 2rem;
+      font-size: 1rem;
+    }
+  }
+
+  .services {
+    .services-container {
+      .service-box {
+        height: 200px;
+        .service-info {
+          h4 {
+            font: {
+              size: 1rem;
+              weight: 600;
+            }
+          }
+          p {
+            font: {
+              size: 0.9rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
