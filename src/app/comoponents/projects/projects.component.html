@@ -1,63 +1,16 @@
 <section class="projects" id="projects">
-        <!-- <h2>What I do</h2>
-        <div class="I-Do">
-            <i class="fa-solid fa-table-cells-large"></i>
-            <h3>front-end development</h3>
-            <h2>Skills</h2>
-            <div class="Skills">
-                <a><i class="fa-brands fa-html5 fa-2x"></i></a>
-                <a><i class="fa-brands fa-css3-alt fa-2x"></i></a>
-                <a><i class="fa-brands fa-square-js fa-2x"></i></a>
-                <a><i class="fa-brands fa-bootstrap fa-2x"></i></a>
-                <a><i class="fa-brands fa-react fa-2x"></i></a>
-                <a><i><img src="./img/tailwind.png" alt=""></i></a>
-            </div>
-        </div> -->
-        <!-- <h1>work on it...</h1> -->
-
-   
-
-            <h2 class="heading">Projects</h2>
-            <h3 class="text-danger pb-5">working on it ...</h3>
-            <div class="card__container">
-               <article class="card__article">
-                  <img src="assets/images/projects/webservice.png" alt="webservice" class="card__img">
-   
-                  <div class="card__data">
-                     <span class="card__description">web Service</span>
-                     <h2 class="card__title">services</h2>
-                     <a href="https://glowing-shortbread-a4a92b.netlify.app/" target="_blank" class="card__button">Read More</a>
-                  </div>
-               </article>
-               <article class="card__article">
-                  <img src="assets/images/projects/blog.png" alt="blog" class="card__img">
-   
-                  <div class="card__data">
-                     <span class="card__description">Blog</span>
-                     <h2 class="card__title">write your own</h2>
-                     <a href="https://mo-ramadan.netlify.app/" target="_blank" class="card__button">Read More</a>
-                  </div>
-               </article>
-   
-               <article class="card__article">
-                  <img src="assets/images/projects/ticketbooking.png" alt="ticketbooking" class="card__img">
-   
-                  <div class="card__data">
-                     <span class="card__description">ticket Booking</span>
-                     <h2 class="card__title">tickets</h2>
-                     <a href="https://github.com/mohamed857/ticket-booking" class="card__button">Read More</a>
-                  </div>
-               </article>
-               <article class="card__article">
-                  <img src="assets/images/projects/ticketbooking.png" alt="image" class="card__img">
-   
-                  <div class="card__data">
-                     <span class="card__description">ticket Booking</span>
-                     <h2 class="card__title">ticket</h2>
-                     <a href="https://github.com/mohamed857/ticket-booking" class="card__button">Read More</a>
-                  </div>
-               </article>
-            </div>
-    
-    
-    </section>
+   <h2 class="heading">Projects</h2>
+   <h3 class="text-danger pb-5">working on it ...</h3>
+   <div class="card__container">
+      @for (project of projects; track project.id) {
+      <article class="card__article">
+         <img [src]='project.img' alt="" class="card__img">
+         <div class="card__data">
+            <span class="card__description">{{project.title}}</span>
+            <h2 class="card__title">{{project.description}}</h2>
+            <a [href]="project.demoLink" target="_blank" class="card__button">Read More</a>
+         </div>
+      </article>
+      }
+   </div>
+</section>
