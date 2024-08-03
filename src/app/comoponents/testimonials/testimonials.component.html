@@ -2,45 +2,18 @@
     <div class="testimonials-box">
         <h2 class="heading">Testimonials</h2>
         <div class="wrapper">
+            @for (test of testimonials; track $index) {
             <div class="testimonials-items">
-                <img src="assets/images/clients/ibrahim.jpg" alt="">
-                <h2>Ibrahim</h2>
+                <img [src]="test.img" alt="">
+                <h2>{{test.name}}</h2>
                 <div class="rating">
+                    @for (star of [].constructor(test.rate); track $index) {
                     <i class="bi bi-star-fill" id="star"></i>
-                    <i class="bi bi-star-fill" id="star"></i>
-                    <i class="bi bi-star-fill" id="star"></i>
-                    <i class="bi bi-star-fill" id="star"></i>
-                    <i class="bi bi-star-fill" id="star"></i>
+                    }
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima odio ex iste adipisci doloremque
-                    deleniti illo quas at praesentium temporibus!</p>
+                <p>{{test.description}}</p>
             </div>
-            <div class="testimonials-items">
-                <img src="assets/images/clients/Abdelrhman.jpg" alt="">
-                <h2>Abdelrhman</h2>
-                <div class="rating">
-                    <i class="bi bi-star-fill" id="star"></i>
-                    <i class="bi bi-star-fill" id="star"></i>
-                    <i class="bi bi-star-fill" id="star"></i>
-                    <i class="bi bi-star-fill" id="star"></i>
-                    <i class="bi bi-star-fill" id="star"></i>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima odio ex iste adipisci doloremque
-                    deleniti illo quas at praesentium temporibus!</p>
-            </div>
-            <div class="testimonials-items">
-                <img src="assets/images/clients/mamdouh.jpg" alt="">
-                <h2>Abdelrhman Mamdouh</h2>
-                <div class="rating">
-                    <i class="bi bi-star-fill" id="star"></i>
-                    <i class="bi bi-star-fill" id="star"></i>
-                    <i class="bi bi-star-fill" id="star"></i>
-                    <i class="bi bi-star-fill" id="star"></i>
-                    <i class="bi bi-star-fill" id="star"></i>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima odio ex iste adipisci doloremque
-                    deleniti illo quas at praesentium temporibus!</p>
-            </div>
+            }
         </div>
     </div>
 </section>
