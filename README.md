@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.3.
 
+https://portfolio-flame-seven-68.vercel.app/
+![image](https://github.com/user-attachments/assets/611247aa-186f-45e5-b5a7-eebe944d7852)
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
