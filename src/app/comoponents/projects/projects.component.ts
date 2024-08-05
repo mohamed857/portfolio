@@ -19,5 +19,6 @@ export class ProjectsComponent {
     { id: 7, title: 'hero-app', description: 'hero-app', demoLink: '', githubLink: 'https://github.com/mohamed857/hero-app', img: 'assets/images/projects/heroapp.png' },
     { id: 8, title: 'figma-dashboard', description: 'figma-dashboard', demoLink: '', githubLink: 'https://github.com/mohamed857/figma1', img: 'assets/images/projects/figma-dashboard.png' },
     { id: 9, title: 'tickets-sales', description: 'tickets-sales', demoLink: '', githubLink: 'https://github.com/mohamed857/tickets-sales', img: 'assets/images/projects/tickets-sales.png' },
+    { id: 10, title: 'portfolio', description: 'portfolio', demoLink: 'https://portfolio-flame-seven-68.vercel.app/', githubLink: 'https://github.com/mohamed857/portfolio', img: 'assets/images/projects/portfolio.png' },
   ]
 }
