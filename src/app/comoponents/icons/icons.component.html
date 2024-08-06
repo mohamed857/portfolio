@@ -1,7 +1,5 @@
 <div class="social-icons">
-    <a href="https://www.facebook.com/MohamedRamadan.cc" target="_blank"><i class="bi bi-facebook"></i> </a>
-    <a href="https://www.instagram.com/mohamedramadan.cc/" target="_blank"><i class="bi bi-instagram"></i> </a>
-    <a href="https://www.linkedin.com/in/mohamed-ramadan-71780b1b8/" target="_blank"><i class="bi bi-linkedin"></i> </a>
-    <a href="https://github.com/mohamed857" target="_blank"><i class="bi bi-github"></i> </a>
-    <a href="https://twitter.com/elcessy_m" target="_blank"><i class="bi bi-twitter-x"></i> </a>
+    @for (link of links; track link.id) {
+    <a [href]="link.href" target="_blank"><i [class]="link.iconClass"></i> </a>
+    }
 </div>
