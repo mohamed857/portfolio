@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-head',
@@ -17,4 +17,24 @@ export class HeadComponent {
     { id: 5, title: 'Projects', path: 'projects' },
     { id: 6, title: 'Contact', path: 'contact' },
   ]
+
+  constructor(private router: Router) { }
+
+  ngOnInit(): void {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        const fragment = this.router.routerState.snapshot.root.fragment;
+        if (fragment) {
+          this.scrollToFragment(fragment);
+        }
+      }
+    });
+  }
+
+  private scrollToFragment(fragment: string): void {
+    const element = document.getElementById(fragment);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }

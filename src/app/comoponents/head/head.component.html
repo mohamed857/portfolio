@@ -4,7 +4,7 @@
         <i class="bi bi-menu-app-fill" id="menu-icon" onclick="man()"></i>
     <nav class="navbar">
         @for (link of links; track link.id) {
-            <a [routerLink]="link.path" routerLinkActive="active">{{link.title}}</a>
+            <a [routerLink]="[]" [fragment]="link.path" routerLinkActive="active">{{link.title}}</a>
         }
     </nav>
 </header>

@@ -182,6 +182,7 @@ section {
         size: 30px;
         weight: 500;
       }
+
       text-align: center;
 
       min-width: 280px;
@@ -211,6 +212,7 @@ section {
     .btn-group {
       @extend .flex-box;
       gap: 1.8rem;
+
       a {
         &:nth-child(2) {
           background-color: var(--bg-color);
@@ -230,6 +232,7 @@ section {
 
   .home-img {
     border-radius: 50%;
+    animation: floatImage 4s ease-in-out infinite;
 
     img {
       position: relative;
@@ -290,6 +293,7 @@ a {
 }
 
 @keyframes words {
+
   0%,
   20% {
     content: "Frontend Developer";
@@ -317,6 +321,7 @@ a {
 }
 
 @keyframes typing {
+
   10%,
   15%,
   30%,
@@ -591,24 +596,30 @@ a {
 
 .projects {
   text-align: center;
+
   .card__container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     row-gap: 3.5rem;
+
     .card__article {
       position: relative;
       overflow: hidden;
       cursor: pointer;
+
       &:hover {
         animation: remove-overflow 2s forwards;
+
         .card__data {
           animation: show-data 1s forwards;
           opacity: 1;
           transition: opacity 0.3s;
         }
       }
+
       &:not(:hover) {
         animation: show-overflow 2s forwards;
+
         .card__data {
           animation: remove-data 1s forwards;
         }
@@ -619,6 +630,7 @@ a {
         height: 270px;
         border-radius: 1.5rem;
       }
+
       .card__data {
         width: 280px;
         background-color: #13a5cdcb;
@@ -632,23 +644,27 @@ a {
         margin-inline: auto;
         opacity: 0;
         transition: opacity 1s 1s;
+
         .card__description {
           display: block;
           font-size: 1.2rem;
           margin-bottom: 0.25rem;
           color: black;
         }
+
         .card__title {
           font-size: 1rem;
           font-weight: 500;
           color: var(--title-color);
           margin-bottom: 0.75rem;
         }
+
         .card__button {
           text-decoration: none;
           font-size: 0.8rem;
           font-weight: 500;
           color: var(--first-color);
+
           &:hover {
             text-decoration: underline;
           }
@@ -656,10 +672,12 @@ a {
       }
     }
   }
+
   @keyframes show-data {
     50% {
       transform: translateY(-10rem);
     }
+
     100% {
       transform: translateY(-7rem);
     }
@@ -675,9 +693,11 @@ a {
     0% {
       transform: translateY(-7rem);
     }
+
     50% {
       transform: translateY(-10rem);
     }
+
     100% {
       transform: translateY(0.5rem);
     }
@@ -688,6 +708,7 @@ a {
       overflow: initial;
       pointer-events: none;
     }
+
     50% {
       overflow: hidden;
     }
@@ -699,12 +720,12 @@ a {
 
   h2 {
     color: #fafafa;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
   }
 
   form {
     @extend .flex-box;
-    gap: 3rem;
+    gap: 2rem;
     text-align: center;
 
     .input-group {
@@ -741,8 +762,8 @@ a {
 
 .class1 {
   width: 100%;
-  padding: 2rem;
-  font-size: 1.2rem;
+  padding: 1.5rem;
+  font-size: 1rem;
   color: var(--text-color);
   background: var(--bg-color);
   border-radius: 2rem;
@@ -765,6 +786,7 @@ a {
       column-gap: 0.5rem;
     }
   }
+
   .header {
     .navbar {
       a {
@@ -898,6 +920,7 @@ a {
       column-gap: 0.5rem;
     }
   }
+
   #menu-icon {
     display: block;
   }
@@ -943,6 +966,7 @@ a {
       h3 {
         font-size: 1.5rem;
       }
+
       h1 {
         font-size: 2.3rem;
         margin-top: 1rem;
@@ -966,11 +990,13 @@ a {
 @media (max-width: 449px) {
   .header {
     padding: 1rem 3%;
+
     .logo {
       width: 100%;
       font-size: 1.8rem;
     }
   }
+
   .home {
     gap: 0.1rem;
 
@@ -978,6 +1004,7 @@ a {
       .text-animation {
         font-size: 1.5rem;
       }
+
       h1 {
         font-size: 2rem;
         margin-top: 0rem;
@@ -989,12 +1016,14 @@ a {
       }
     }
   }
+
   .btnn {
     font: {
       size: 0.8rem;
       weight: 600;
     }
   }
+
   .social-icons {
     a {
       width: 2rem;
@@ -1007,6 +1036,7 @@ a {
     .services-container {
       .service-box {
         height: 200px;
+
         .service-info {
           h4 {
             font: {
@@ -1014,6 +1044,7 @@ a {
               weight: 600;
             }
           }
+
           p {
             font: {
               size: 0.9rem;
@@ -1024,14 +1055,17 @@ a {
     }
   }
 }
+
 @media (max-width: 385px) {
   .header {
     padding: 1rem 3%;
+
     .logo {
       width: 100%;
       font-size: 1.8rem;
     }
   }
+
   .home {
     gap: 0.1rem;
 
@@ -1039,6 +1073,7 @@ a {
       .text-animation {
         font-size: 1.2rem;
       }
+
       h1 {
         font-size: 1.7rem;
         margin-top: 0rem;
@@ -1050,12 +1085,27 @@ a {
       }
     }
   }
+
   .btnn {
     font: {
       size: 0.6rem;
       weight: 600;
     }
   }
- 
 
+
+}
+
+@keyframes floatImage {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-2.4rem);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
