@@ -8,15 +8,15 @@ import { ContactComponent } from './comoponents/contact/contact.component';
 import { ProjectsComponent } from './comoponents/projects/projects.component';
 
 export const routes: Routes = [
-    { path: 'home', component: HomeComponent },
-    // {path:'education',component:EducationComponent},
-    { path: 'education', 
-      loadComponent: () => import('./comoponents/education/education.component').then((c)=>c.EducationComponent) },
-    { path: 'services', component: ServicesComponent },
-    { path: 'testimonials', component: TestimonialsComponent },
-    { path: 'contact', component: ContactComponent },
-    { path: 'projects', component: ProjectsComponent },
-    { path: '', pathMatch: 'full', redirectTo: 'home' },
+    // { path: 'home', component: HomeComponent },
+    // // {path:'education',component:EducationComponent},
+    // { path: 'education', 
+    //   loadComponent: () => import('./comoponents/education/education.component').then((c)=>c.EducationComponent) },
+    // { path: 'services', component: ServicesComponent },
+    // { path: 'testimonials', component: TestimonialsComponent },
+    // { path: 'contact', component: ContactComponent },
+    // { path: 'projects', component: ProjectsComponent },
+    // { path: '', pathMatch: 'full', redirectTo: 'home' },
     { path: '**', component: PageNotFoundComponent }
 
 ];
